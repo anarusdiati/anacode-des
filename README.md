@@ -2,9 +2,9 @@
 
 Something I wanna use to post my code. This repository is dedicated to post codes for Cryptography and Net Security class :)
 
-Nama: Rokhana Diyah Rusdiati
-NIM: 15/378074/PA/16549
-Kelas: Ilmu Komputer A
+Nama: Rokhana Diyah Rusdiati </br>
+NIM: 15/378074/PA/16549 </br>
+Kelas: Ilmu Komputer A </br>
 
 Kontribusi saya dalam mengerjakan tugas kelompok "Implementasi Algoritma DES" adalah sebagai berikut. </br>
 1. Mencari referensi kodingan DES dalam C++, link: ... (INS-DES.zip) </br>
