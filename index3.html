@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Counting Words Using Javascript</title>
+</head> 
+<body>
+	<form>
+		<textarea id="text" cols="35"></textarea>
+		<br>
+		<input type="button" value="Banyak kata" onclick="hitung()">
+		<input type="text" id="total" readonly>
+	</form>
+	<script type="text/javascript">
+		function hitung(){
+			var banyak_kata = document.getElementById("text").value banyak_kata = banyak_kata.split(" ")
+			
+			var count=1;
+			for(int i=0;i<banyak_kata.length;i++){
+				if(document.getElementById("text")[i]==" "){
+					count++;
+				}
+			}
+		}
+		document.getElementById("total").value = count;
+	</script>
+</body>
+</html>
