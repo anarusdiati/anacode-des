@@ -1,11 +1,7 @@
-Dokumen ini berisi penjelasan dari file kodingan DES.java. 
-
-Penjelasan ditulis berdasarkan baris ke-i hingga beberapa 
-
-baris setelahnya.
-
-BARIS KE-2
-Digunakan untuk import library bahasa Java.
+Dokumen ini berisi penjelasan dari file kodingan DES.java. Penjelasan ditulis berdasarkan baris ke-i hingga beberapa baris setelahnya.
+  
+  import java.util.*;
+  class DES {
 
 BARIS KE-4
 Merupakan kelas DES, yaitu main program yang berjalan
