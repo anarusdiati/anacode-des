@@ -146,7 +146,12 @@ telah dipetakan ke dalam PC-1.
 
 	private static int[] C = new int[28];
 	private static int[] D = new int[28];
-	
+
+Di bawah ini adalah fungsi untuk mengubah karakter ASCII ke heksadesimal.
+Fungsi ini digunakan dalam proses enkripsi. Karena algoritma DES bekerja 
+pada 64 bit data, maka perlu diubah dulu menjadi heksadesimal agar mempermudah
+dalam penempatan blok dari bit-bit yang ada.
+
 	private static String asciiToHex(String asciiValue)
   {
     char[] chars = asciiValue.toCharArray();
@@ -157,6 +162,11 @@ telah dipetakan ke dalam PC-1.
     }
     return hex.toString();
   }
+
+Sedangkan fungsi di bawah ini adalah fungsi untuk mengubah karakter
+heksadesimal menjadi karakter ASCII. FUngsi ini digunakan dalam menampilkan
+output program saat dekripsi untuk kembali semula seperti plaintext.
+
   private static String hexToASCII(String hexValue)
   {
     StringBuilder output = new StringBuilder("");
