@@ -218,16 +218,14 @@ dengan terlebih dahulu parsing ke int dan kemudian mengkonversi ke biner string.
 			}
 				System.out.append(s);
 		}
-			
-			
-	
+						
+Berikut ini adalah proses pengambilan data key yang diinputkan dari user.
+
 		System.out.println("\n\nmasukkan kunci 8 karakter :");
 		String key = new Scanner(System.in).nextLine();
 		String hexEquivalent2 = asciiToHex(key);
-      
       	hexEquivalent2 = hexEquivalent2.toUpperCase();
-      	
-      	System.out.println("Nilai biner:");
+    System.out.println("Nilai biner:");
 		int keyBits[] = new int[64];
 		for(int i=0 ; i < 16 ; i++) {
 			String s = Integer.toBinaryString(Integer.parseInt(hexEquivalent2.charAt(i) + "", 16));
@@ -237,24 +235,20 @@ dengan terlebih dahulu parsing ke int dan kemudian mengkonversi ke biner string.
 			for(int j=0 ; j < 4 ; j++) {
 				keyBits[(4*i)+j] = Integer.parseInt(s.charAt(j) + "");
 			}
-			System.out.append(s);
-			
+			System.out.append(s);			
 		}
-	
+
+Berikut ini adalah kode yang menampilkan output program.
+
 		System.out.println("\n\n====================================================================");
 		System.out.println("ENCRYPTION");
 		int outputBits[] = permute(inputBits, keyBits, false);
 		System.out.println("\n\n====================================================================");
 		System.out.println("DECRYPTION");
-	
 		permute(outputBits, keyBits, true);
-		
 	}
 	
-	
-		
 	private static int[] permute(int[] inputBits, int[] keyBits, boolean isDecrypt) {
-		
 		int newBits[] = new int[inputBits.length];
 		for(int i=0 ; i < inputBits.length ; i++) {
 			newBits[i] = inputBits[IP[i]-1];
@@ -263,7 +257,6 @@ dengan terlebih dahulu parsing ke int dan kemudian mengkonversi ke biner string.
 		int L[] = new int[32];
 		int R[] = new int[32];
 		int i;
-		
 	
 		for(i=0 ; i < 28 ; i++) {
 			C[i] = keyBits[PC1[i]-1];
@@ -327,28 +320,17 @@ dengan terlebih dahulu parsing ke int dan kemudian mengkonversi ke biner string.
 		String asciiEquivalent = hexToASCII(hex);
 	
 		if(isDecrypt) {
-		
-      
 			System.out.println("\nHasil Deskripsi: "+ asciiEquivalent);
-		
 		} else {
-			
-			
 			System.out.println("\nHasil Enkripsi: "+ asciiEquivalent);
 		}
-		
-		
-     
-		return finalOutput;
-			
+		return finalOutput;	
 	}
 	
-
 	private static int[] KS(int round, int[] key) {
 
 		int C1[] = new int[28];
 		int D1[] = new int[28];
-		
 		
 		int rotationTimes = (int) rotations[round];
 		
@@ -364,7 +346,6 @@ dengan terlebih dahulu parsing ke int dan kemudian mengkonversi ke biner string.
 			Kn[i] = CnDn[PC2[i]-1];
 		}
 		
-	
 		subkey[round] = Kn;
 		C = C1;
 		D = D1;
@@ -419,7 +400,6 @@ dengan terlebih dahulu parsing ke int dan kemudian mengkonversi ke biner string.
 		
 			String s = Integer.toBinaryString(x);
 			
-		
 			while(s.length() < 4) {
 				s = "0" + s;
 			}
@@ -461,82 +441,5 @@ dengan terlebih dahulu parsing ke int dan kemudian mengkonversi ke biner string.
 			System.out.print(Integer.toBinaryString(Integer.parseInt(output, 2)));
 		}
 		System.out.println();
-		
 	}
-	
 }
-
-
-BARIS KE-6
-Berisi array tabel Initial Permutation.
-
-BARIS KE-18
-Berisi array tabel Permuted Choice 1.
-
-BARIS KE-30
-Berisi array tabel Permuted Choice 2.
-
-BARIS KE-42
-Merupakan array untuk menyimpan angka rotasi yang telah 
-
-selesai setiap ronde.
-
-BARIS KE-47
-Berisi array tabel Expansion.
-
-BARIS KE-59
-Berisi array-array dari S-box.
-
-BARIS KE-
-Berisi array tabel Permutation.
-
-BARIS KE-114
-Berisi array tabel Final Permutation.
-
-BARIS KE-125 dan BARIS KE-126
-Inisiasi array baru C dan D untuk men-generate subkey.
-
-BARIS KE-128
-Berisi fungsi untuk mengubah karakter ASCII ke heksadesimal.
-
-BARIS KE-140
-Berisi fungsi untuk mengubah karakter heksadesimal ke ASCII.
-
-
-BARIS KE-4
-Merupakan kelas DES, yaitu main program yang berjalan
-
-BARIS KE-6
-Berisi array tabel Initial Permutation.
-
-BARIS KE-18
-Berisi array tabel Permuted Choice 1.
-
-BARIS KE-30
-Berisi array tabel Permuted Choice 2.
-
-BARIS KE-42
-Merupakan array untuk menyimpan angka rotasi yang telah 
-
-selesai setiap ronde.
-
-BARIS KE-47
-Berisi array tabel Expansion.
-
-BARIS KE-59
-Berisi array-array dari S-box.
-
-BARIS KE-
-Berisi array tabel Permutation.
-
-BARIS KE-114
-Berisi array tabel Final Permutation.
-
-BARIS KE-125 dan BARIS KE-126
-Inisiasi array baru C dan D untuk men-generate subkey.
-
-BARIS KE-128
-Berisi fungsi untuk mengubah karakter ASCII ke heksadesimal.
-
-BARIS KE-140
-Berisi fungsi untuk mengubah karakter heksadesimal ke ASCII.
