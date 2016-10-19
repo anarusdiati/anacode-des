@@ -1,3 +1,38 @@
+CARA KERJA ALGORITMA DES (1 ronde)
+
+Pada Plaintext
+
+Mula-mula, terdapat sebuah plaintext dengan panjang 64 bit. Plaintext tersebut kemudian 
+dipetakan ke dalam tabel Initial Permutation (64 bit). Hasil mapping tersebut kemudian 
+dibagi menjadi dua bagian, yaitu L(0) dan R(0). L(0) merupakan bit ke-1 hingga bit ke-32 dan R(0) 
+merupakan bit ke-33 hingga bit ke-64. L(0) dan R(0 ) masing-masing terdiri dari 32 bit.
+
+L(0) kemudian akan diproses nanti (di akhir ronde) bersama dengan hasil permutasi B 
+(akan diperjelas di bawah). R(0) mengalami dua proses, yaitu menjadi L(i) di ronde berikutnya 
+dan mengalami ekspansi. R(0) (32 bit) diekspansi menggunakan matriks Ekspansi (32 bit), 
+di sini terjadi pemetaan bit-bit dari R(0) menjadi E(R(0)) 32 bit. Hasil ekspansi atau E(R(0)) 
+kemudian di-XOR-kan dengan KeyGen hasi generating key dari external key. Di sini sibuat 
+sebuah persamaan untuk memudahkan, yaitu A = E(R(0)) xor KeyGen. Cara memperoleh KeyGen 
+dijabarkan dalam penjelasan “Pada Key”.
+
+Selanjutnya, A dijadikan sebagai input yang dimasukkan ke dalam S-boxes. Output dari 
+S-boxes terdiri dari 48 bit, selanjutnya disebut sebagai B. B kemudian dipetakan dengan
+matriks Permutasi menjadi hanya 32 bit saja (P(B)). Hasil mapping tersebut kemudian dikenakan 
+operasi XOR, yaitu P(B) xor L(i-1) untuk selanjutnya menjadi R(i). 
+
+Pada Key
+
+Mula-mula, terdapat sebuah external key yang panjangnya 64 bit, yaitu key yang diperoleh 
+dari hasil input user. External key ini kemudian dipetakan menggunakan tabel 
+Permuted Choice 1 (PC-1) sehingga menjadi 56 bit saja. Hasil mapping tersebut kemudian 
+dibagi dua, yaitu menjadi C(0) dan D(0) yang masing-masing terdiri dari 28 bit. C(0) dan D(0) kemudian 
+dikenakan operasi left-shit, yaitu operasi pergeseran bit ke arah kiri. Operasi left-shift 
+tersebut berlangsung sesuai dengan jadwal rotasi yang telah ditentukan (schedule of left-shit). 
+Hasil operasi left-shift pada C(0) dan D(0) kemudian dipetakan menggunakan tabel Permuted Choice 2 (PC-2) 48 bit, 
+selanjutnya hasil mapping tersebut disebut sebagai KeyGen yang digunakan dalam proses operasi XOR.
+
+***************************************************************************************************
+
 Dokumen ini berisi penjelasan dari file kodingan DES.java. 
 Penjelasan ditulis berdasarkan baris ke-i hingga beberapa baris setelahnya.
 
