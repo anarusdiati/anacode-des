@@ -1,9 +1,8 @@
-ini adalahkjadhshfkaskjhfkjshadfkhaksjdhga
-dsagdasgdfgsdfhgfshfh
+
 import java.util.*;
 
 class DES {
-	
+	//Berisi array tabel Initial Permutation.
 	private static final byte[] IP = { 	
 		58, 50, 42, 34, 26, 18, 10, 2,	
 		60, 52, 44, 36, 28, 20, 12, 4,
@@ -15,7 +14,7 @@ class DES {
 		63, 55, 47, 39, 31, 23, 15, 7
 	};
 	
-
+	//Berisi array tabel Permuted Choice 1.
 	private static final byte[] PC1 = {
 		57, 49, 41, 33, 25, 17, 9,
 		1,  58, 50, 42, 34, 26, 18,
@@ -27,7 +26,7 @@ class DES {
 		21, 13, 5,  28, 20, 12, 4
 	};
 	
-
+	Berisi array tabel Permuted Choice 2.
 	private static final byte[] PC2 = {
 		14, 17, 11, 24, 1,  5,
 		3,  28, 15, 6,  21, 10,
@@ -39,7 +38,7 @@ class DES {
 		46, 42, 50, 36, 29, 32
 	};
 	
-
+	//Merupakan array untuk menyimpan angka rotasi yang telah selesai setiap ronde.
 	private static final byte[] rotations = {
 		1, 1, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 1
 	};
