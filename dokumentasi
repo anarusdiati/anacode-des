@@ -1,1 +1,46 @@
+Dokumen ini berisi penjelasan dari file kodingan DES.java. 
 
+Penjelasan ditulis berdasarkan baris ke-i hingga beberapa 
+
+baris setelahnya.
+
+BARIS KE-2
+Digunakan untuk import library bahasa Java.
+
+BARIS KE-4
+Merupakan kelas DES, yaitu main program yang berjalan
+
+BARIS KE-6
+Berisi array tabel Initial Permutation.
+
+BARIS KE-18
+Berisi array tabel Permuted Choice 1.
+
+BARIS KE-30
+Berisi array tabel Permuted Choice 2.
+
+BARIS KE-42
+Merupakan array untuk menyimpan angka rotasi yang telah 
+
+selesai setiap ronde.
+
+BARIS KE-47
+Berisi array tabel Expansion.
+
+BARIS KE-59
+Berisi array-array dari S-box.
+
+BARIS KE-
+Berisi array tabel Permutation.
+
+BARIS KE-114
+Berisi array tabel Final Permutation.
+
+BARIS KE-125 dan BARIS KE-126
+Inisiasi array baru C dan D untuk men-generate subkey.
+
+BARIS KE-128
+Berisi fungsi untuk mengubah karakter ASCII ke heksadesimal.
+
+BARIS KE-140
+Berisi fungsi untuk mengubah karakter heksadesimal ke ASCII.
