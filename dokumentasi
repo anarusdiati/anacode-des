@@ -35,6 +35,8 @@ Kemudian nanti akan dibagi menjadi dua, yaitu menjadi C dan D.
     21, 13, 5,  28, 20, 12, 4
   };
 
+Di bawah ini merupakan array yang berisi tabel Permuted Choice 2 (PC-2).
+
   private static final byte[] PC2 = {
     14, 17, 11, 24, 1,  5,
     3,  28, 15, 6,  21, 10,
@@ -52,8 +54,9 @@ Di bawah ini adalah array yang berisi tabel jadwal rotasi byte.
     1, 1, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 1
   };
 	
-	
-	private static final byte[] E = {
+Di bawah ini merupakan array yang berisi tabel Final Permutation.
+
+  private static final byte[] E = {
 		32, 1,  2,  3,  4,  5,
 		4,  5,  6,  7,  8,  9,
 		8,  9,  10, 11, 12, 13,
@@ -64,6 +67,9 @@ Di bawah ini adalah array yang berisi tabel jadwal rotasi byte.
 		28, 29, 30, 31, 32, 1
 	};
 	
+Di bawah ini merupakan kumpulan array yang berisi tabel-tabel S-box.
+Terdapat 8 S-box dengan isi alamat array yang berbeda untuk memetakan bit-bit
+hasil operasi XOR antara E(R) dengan K.
 	
 	private static final byte[][] S = { {
 		14, 4,  13, 1,  2,  15, 11, 8,  3,  10, 6,  12, 5,  9,  0,  7,
@@ -107,6 +113,7 @@ Di bawah ini adalah array yang berisi tabel jadwal rotasi byte.
 		2,  1,  14, 7,  4,  10, 8,  13, 15, 12, 9,  0,  3,  5,  6,  11
 	} };
 	
+Di bawah ini merupakan tabel Permutation.
 
 	private static final byte[] P = {
 		16, 7,  20, 21,
@@ -119,7 +126,9 @@ Di bawah ini adalah array yang berisi tabel jadwal rotasi byte.
 		22, 11, 4,  25
 	};
 	
-	
+Di bawah ini merupakan array yang berisi kebalikan dari array sebelumnya,
+disebut sebagai tabel Inverse Permutation.
+
 	private static final byte[] FP = {
 		40, 8, 48, 16, 56, 24, 64, 32,
 		39, 7, 47, 15, 55, 23, 63, 31,
@@ -131,29 +140,33 @@ Di bawah ini adalah array yang berisi tabel jadwal rotasi byte.
 		33, 1, 41, 9, 49, 17, 57, 25
 	};
 
+Di bawah ini merupakan inisiasi array C dan D yang masing-masing
+panjangnya 28 bit, merupakan hasil bagi dua dari External Key yang
+telah dipetakan ke dalam PC-1.
+
 	private static int[] C = new int[28];
 	private static int[] D = new int[28];
 	
-	 private static String asciiToHex(String asciiValue)
-   {
-      char[] chars = asciiValue.toCharArray();
-      StringBuffer hex = new StringBuffer();
-      for (int i = 0; i < chars.length; i++)
-      {
-         hex.append(Integer.toHexString((int) chars[i]));
-      }
-      return hex.toString();
-   }
-   private static String hexToASCII(String hexValue)
-   {
-      StringBuilder output = new StringBuilder("");
-      for (int i = 0; i < hexValue.length(); i += 2)
-      {
-         String str = hexValue.substring(i, i + 2);
+	private static String asciiToHex(String asciiValue)
+  {
+    char[] chars = asciiValue.toCharArray();
+    StringBuffer hex = new StringBuffer();
+    for (int i = 0; i < chars.length; i++)
+    {
+       hex.append(Integer.toHexString((int) chars[i]));
+    }
+    return hex.toString();
+  }
+  private static String hexToASCII(String hexValue)
+  {
+    StringBuilder output = new StringBuilder("");
+    for (int i = 0; i < hexValue.length(); i += 2)
+    {
+       String str = hexValue.substring(i, i + 2);
          output.append((char) Integer.parseInt(str, 16));
-      }
+    }
       return output.toString();
-   }
+  }
    
    
    
