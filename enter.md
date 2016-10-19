@@ -1,8 +1,9 @@
 Dokumen ini berisi penjelasan dari file kodingan DES.java. 
 Penjelasan ditulis berdasarkan baris ke-i hingga beberapa baris setelahnya.
 
-  import java.util.*;
-  class DES {
+  import java.util.*;  
+
+  class DES { 
 	
 Di bawah ini merupakan array yang berisi tabel Initial Permutation (IP).
 Inital Permutation digunakan untuk memetakan 64 bit plaintext untuk selanjutnya 
